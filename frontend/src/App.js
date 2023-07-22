@@ -1,11 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-import Profile from './components/Profile';
+import "./App.css";
+import Profile from "./pages/Profile";
+import Navbar from "./components/Navbar";
+import HomePage from "./pages/Home";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
 function App() {
   return (
-    <div className="App">
-      <Profile />
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={HomePage} />
+          <Route path="/profile" element={Profile} />
+        </Routes>
+        <Profile />
+      </div>
+    </Router>
   );
 }
 
